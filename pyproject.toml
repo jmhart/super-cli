@@ -1,0 +1,29 @@
+[project]
+name = "super"
+version = "0.0.1"
+description = "A super simple cli."
+readme = "README.md"
+requires-python = ">=3.8"
+license = {file = "LICENSE"}
+keywords = ["super", "simple", "cli"]
+authors = [
+  {name = "jmh"},
+]
+classifiers = [
+  "Programming Language :: Python :: 3"
+]
+
+dependencies = [
+  "click",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest",
+  "mkdocs",
+  "flake8",
+  "black",
+]
+
+[project.scripts]
+standup = "super.cli:standup"
