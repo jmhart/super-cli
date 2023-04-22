@@ -2,22 +2,13 @@
 
 import click
 
+from super.standup import standup
+
 
 @click.group()
-def standup():
-    click.echo("standup cli")
+def cli():
+    """Start"""
+    click.echo("Super!")
 
 
-@standup.command()
-def yesterday():
-    click.echo('what did you do yesterday?')
-
-
-@standup.command()
-def today():
-    click.echo('what are you doing today?')
-
-
-@standup.command()
-def blockers():
-    click.echo('blockers?')
+cli.add_command(standup)

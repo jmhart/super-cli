@@ -26,4 +26,4 @@ dev = [
 ]
 
 [project.scripts]
-standup = "super.cli:standup"
+super = "super.cli:cli"

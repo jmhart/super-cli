@@ -7,15 +7,11 @@ FORMATTER = black
 
 .PHONY: docs
 
-# $(VENV)/bin/activate:
-
-init:
-	$(PIP) install .[dev]
-
 install:
 	python3 -m venv $(VENV)
+	. $(VENV)/bin/activate
 	$(PYTHON) -m pip install --upgrade pip setuptools wheel twine
-	$(PIP) install setuptools wheel twine
+	# $(PIP) install setuptools wheel twine
 
 clean:
 	find . -name "*.pyc" -delete
@@ -34,4 +30,4 @@ docs:
 	mkdocs serve -a localhost:8000
 
 deploy-local:
-	pip install --editable .
+	pip install -e .
